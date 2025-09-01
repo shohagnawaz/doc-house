@@ -4,11 +4,11 @@ import tImage from "../../../assets/Home/Service/tService.png";
 const Services = () => {
     return (
         <div className="flex items-center justify-center p-20">
-            <div className="mr-8">
+            <div className="mr-8 w-2xl">
                 <img src={serImage} alt="" />
             </div>
 
-            <div className="">
+            <div className="md:space-y-3">
                 <h3 className="text-2xl">Our Service</h3>
                 <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem 
                     accusantium doloremque laudantium, totam rem aperiam, eaque ipsa 
