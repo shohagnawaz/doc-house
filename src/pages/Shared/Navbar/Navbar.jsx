@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
+import logo from "../../../../public/logo.png";
 
 const Navbar = () => {
   const navItems = (
     <>
       <li><Link to="/">Home</Link></li>
+      <li><Link to="/doctor">Doctor Profile</Link></li>
       <li><Link to="/about">About</Link> </li>
       <li><Link to="/appointment">Appointment</Link>
       </li> <li><Link to="/login">Login</Link></li>
@@ -11,7 +13,7 @@ const Navbar = () => {
   );
   return (
     <>
-      <div className="navbar fixed z-10 max-w-screen-2xl">
+      <div className="navbar fixed z-10 max-w-screen-2xl pt-6">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -38,7 +40,9 @@ const Navbar = () => {
               {navItems}
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">Doc House</a>
+          <a className="btn btn-ghost text-xl">
+            <img src={logo} alt="" />
+          </a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{navItems}</ul>

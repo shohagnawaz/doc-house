@@ -16,9 +16,10 @@ const Testimonials = () => {
         fetch("reviews.json")
         .then(res => res.json())
         .then(data => setReviews(data))
-    },[])
+    },[]);
+
   return (
-    <section className="my-20">
+    <section className="my-10">
       <SectionTitle
         heading={"What Our Patients Says"}
         subHeading="Sed ut perspiciatis unde omnis iste natus error sit voluptatem 
