@@ -1,11 +1,10 @@
-import { Helmet } from "react-helmet-async";
-
 const DoctorProfile = () => {
     return (
-        <div>
-            <Helmet>
-                <title>Doctor House || Profile</title>
-            </Helmet>
+        <div className="bg-[#07332F] h-[500px]">
+            <div className="pt-70 pl-20">
+                <p>Home/Doctor Profile</p>
+                <h3 className="text-3xl font-bold">Doctor Profile</h3>
+            </div>
         </div>
     );
 };
