@@ -2,7 +2,7 @@ import AboutMe2 from "./AboutMe2";
 
 const AboutMe = () => {
   return (
-    <div className="px-40 mt-20">
+    <div className="px-40 mt-20 mb-20">
       <div>
         <h3 className="text-2xl">About me</h3>
         <p>
