@@ -1,11 +1,13 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import loginImg from "../../../src/assets/Login/Frame.png";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import { Helmet } from "react-helmet-async";
+import Swal from "sweetalert2";
 
 const SignUp = () => {
-  const { createUser } = useContext(AuthContext);
+  const { createUser, updateUserProfile } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const handleSignUp = (event) => {
     event.preventDefault();
@@ -14,11 +16,21 @@ const SignUp = () => {
     const email = form.email.value;
     const password = form.password.value;
     console.log(name, email, password);
-    createUser(email, password)
-        .then(result => {
-            const loggedUser = result.user;
-            console.log(loggedUser);
+    createUser(email, password).then((result) => {
+      const loggedUser = result.user;
+      console.log(loggedUser);
+      updateUserProfile(name)
+        .then(() => {
+          console.log("User profile updated")
         })
+        .catch(error => console.log(error))
+      Swal.fire({
+        title: "User create successfully",
+        icon: "success",
+        draggable: true,
+      });
+      navigate("/");
+    });
   };
   return (
     <>

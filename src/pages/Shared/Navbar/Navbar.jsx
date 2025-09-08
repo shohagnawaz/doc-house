@@ -15,11 +15,13 @@ const Navbar = () => {
     <>
       <li><Link to="/">Home</Link></li>
       <li><Link to="/doctor">Doctor Profile</Link></li>
-      <li><Link to="/about">About</Link> </li>
+      <li><Link to="/about">About</Link></li>
+      <li><Link to="/secret">Secret</Link></li>
       <li><Link to="/appointment">Appointment</Link></li> 
       
       {
         user ? <>
+        <li className="mt-1.5 mr-4">{user?.displayName}</li>
         <button onClick={handleLogOut} className="btn btn-error">Log Out</button>
         </> : <>
         <li><Link to="/login">Login</Link></li>  
